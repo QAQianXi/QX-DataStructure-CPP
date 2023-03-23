@@ -17,7 +17,7 @@ struct SqList {  //在c++中可以不需要typedef因为在c++中struct也是一
  * 输出顺序表
  * @param L
  */
-void printSqList(SqList L) {//疑是cout中字符串导致的输出问题导致run和debug的运行内容不同
+void PrintSqList(SqList L) {//疑是cout中字符串导致的输出问题导致run和debug的运行内容不同
 
 //    system("chcp 65001");//方案1 影响输出
     SetConsoleOutputCP(CP_UTF8);//方案2 需要导入window.h
@@ -34,7 +34,7 @@ void printSqList(SqList L) {//疑是cout中字符串导致的输出问题导致r
  * @param L 操作的顺序表
  * @return 操作的是否成功
  */
-bool insertElemSqList(int e, int index, SqList &L) {
+bool insertSqListNum(int e, int index, SqList &L) {
 
     if (index < 1 or index > L.length + 1)
         return false;
@@ -54,7 +54,7 @@ bool insertElemSqList(int e, int index, SqList &L) {
  * @param L 操作的顺序表
  * @return 操作的是否成功
  */
-bool deleteElemSqList(int index, SqList &L) {
+bool deleteSqListNum(int index, SqList &L) {
     if (index < 1 or index > L.length)
         return false;
     for (int i = index - 1; i <= L.length; ++i) {
@@ -82,16 +82,16 @@ void intiSqList(SqList &L, int n) {
 int main() {
     SqList L;
     intiSqList(L, 10);
-    printSqList(L);
+    PrintSqList(L);
     cout << endl;
-    if (insertElemSqList(4555, 5, L)) {
-        printSqList(L);
+    if (insertSqListNum(4555, 5, L)) {
+        PrintSqList(L);
     } else {
         cout << "False";
     }
     cout << endl;
-    if (deleteElemSqList(5, L)) {
-        printSqList(L);
+    if (deleteSqListNum(5, L)) {
+        PrintSqList(L);
     } else {
         cout << "False";
     }
