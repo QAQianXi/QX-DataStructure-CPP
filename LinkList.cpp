@@ -122,6 +122,7 @@ LinkListNode *findLinkListIndex(int index, LinkListNode *L) {
 }
 
 
+
 int main() {
     LinkListNode *L = initLinkList_TailInsert();
     PrintLinkList(L);

@@ -77,6 +77,19 @@ void intiSqList(SqList &L, int n) {
     }
 
 }
+/*!
+ * 在顺序表中查找第一个元素等于e的元素
+ * @param L 查找的顺序表L
+ * @param e 查找的元素e
+ * @return 找到的元素位序，若未找到则返回0
+ */
+int findSqListNum(SqList L,int e){
+    for (int i = 0; i < L.length; ++i) {
+        if (L.data[i]==e)
+            return i+1;
+    }
+    return false;
+}
 
 
 int main() {
